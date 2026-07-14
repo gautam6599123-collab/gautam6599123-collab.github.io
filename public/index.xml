@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Gautam Singh</title><link>http://localhost:1313/</link><description>Recent content in Home on Gautam Singh</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml"/><item><title>Interesting Recurrence Problems</title><link>http://localhost:1313/posts/recurrences_1/</link><pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate><guid>http://localhost:1313/posts/recurrences_1/</guid><description>&lt;p&gt;I have recently started studying the book &lt;em&gt;Concrete Mathematics&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Home on Gautam Singh</title>
+		<link>http://localhost:34893/</link>
+		<description>Recent content in Home on Gautam Singh</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate></lastBuildDate>
+		
+			<atom:link href="http://localhost:34893/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>
