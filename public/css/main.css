@@ -1,0 +1,102 @@
+/* <stdin> */
+:root {
+  --bg-color: #f4f4f4;
+  --page-bg: #ffffff;
+  --text-color: #000000;
+  --border-color: #000000;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  background-color: var(--page-bg);
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  text-align: left;
+}
+.btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-green {
+  background-color: #007d51;
+  color: #ffffff;
+}
+a {
+  color: #0000ee;
+  text-decoration: none;
+}
+a:visited {
+  color: #551a8b;
+}
+a:hover {
+  text-decoration: underline;
+}
+.content p {
+  margin-bottom: 1.5rem;
+}
+.content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+.highlight table {
+  width: auto !important;
+  border: none !important;
+  margin: 0 !important;
+}
+.highlight td {
+  border: none !important;
+  padding: 0 1rem 0 0 !important;
+  background: transparent !important;
+}
+.highlight {
+  background-color: #f8f9fa;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+.highlight pre {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+code {
+  background-color: #f1f3f5;
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+/*# sourceMappingURL=main.css.map */

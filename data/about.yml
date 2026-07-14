@@ -1,0 +1,18 @@
+personal:
+  - label: "Name"
+    value: "Gautam Singh" # Replaced with generic placeholder
+  - label: "Current Employment"
+    value: "CEO @ [Underwater AI](https://underwater-ai.github.io/)"
+  - label: "Previous Employments"
+    value: "Research Intern, [Indian Institute of Technology, Guwhathi](https://www.iitg.ac.in/)"
+  - label: "Education"
+    value: "BS - MS Mathematics & CS, [Indian Institute of Science Education and Research, Kolkata](https://www.iiserkol.ac.in/web/en/)"
+
+# Contact Table
+contact:
+  - label: "Email"
+    value: "[gautam6599123@gmail.com ](mailto:gautam6599123@gmail.com)"
+  - label: "LinkedIn"
+    value: "[Gautam Singh](https://www.linkedin.com/in/gautam-singh-81466a218/)"
+  - label: "GitHub"
+    value: "[gautam6599123-collab](https://github.com/gautam6599123-collab)"
