@@ -1,7 +1,7 @@
 +++
 title = 'Interesting Recurrence Problems'
 date = 2026-07-12
-draft = true
+draft = false
 tags = ["Discrete Mathematics", "Recurrences"]
 +++
 
