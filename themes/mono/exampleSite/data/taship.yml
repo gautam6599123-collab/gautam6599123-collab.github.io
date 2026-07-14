@@ -1,0 +1,24 @@
+- role: "Teaching Assistant"
+  course: "Introduction to Computational Science"
+  dates: "@2025Spring, 2024Fall"
+
+- role: "Teaching Assistant"
+  course: "Summer Undergraduate Research Program"
+  dates: "@2024Summer"
+
+- role: "Teaching Assistant"
+  course: "Technical Bridge Summer Camp"
+  dates: "@2024Summer"
+  links:
+    - name: "Website"
+      url: "#"
+    - name: "Video"
+      url: "#"
+    - name: "Poster"
+      url: "#"
+  image: "https://via.placeholder.com/800x300.png?text=Group+Photo"
+  caption: "Fig. Collaborative Project Workshop - Summer 2024."
+
+- role: "Teaching Assistant"
+  course: "Advanced Topics in Interactive Systems"
+  dates: "@2022Fall"

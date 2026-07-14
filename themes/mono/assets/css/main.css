@@ -1,0 +1,129 @@
+:root {
+  --bg-color: #f4f4f4; /* Light gray background seen in the margins */
+  --page-bg: #ffffff;
+  --text-color: #000000;
+  --border-color: #000000;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* The main container mimicking a physical sheet of paper */
+.container {
+  background-color: var(--page-bg);
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+}
+
+/* Strict tabular layouts for content */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* Utilitarian Buttons */
+.btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-green {
+  background-color: #007d51; /* The specific green from the images */
+  color: #ffffff;
+}
+
+a {
+    color: #0000ee;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Add spacing between paragraphs inside post content */
+.content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure code blocks or preformatted text also adapt to screen width */
+.content pre {
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+
+/* =========================================
+   SYNTAX HIGHLIGHTER & CODE BLOCK FIXES
+   ========================================= */
+
+/* Prevent global table styles from ruining line numbers */
+.highlight table {
+    width: auto !important;
+    border: none !important;
+    margin: 0 !important;
+}
+
+.highlight td {
+    border: none !important;
+    padding: 0 1rem 0 0 !important; /* Adds space between numbers and code */
+    background: transparent !important;
+}
+
+/* Style the outer code block container */
+.highlight {
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto; /* Adds horizontal scroll if code is too long */
+}
+
+/* Remove default margins/borders from internal pre tags */
+.highlight pre {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+/* Style inline code `like this` without affecting block code */
+code {
+    background-color: #f1f3f5;
+    padding: 0.2em 0.4em;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}

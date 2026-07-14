@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="page-header" style="margin-bottom: 3rem;">
+    <h1 style="margin: 0 0 1.5rem 0; font-size: 2rem; text-transform: capitalize;">{{ .Title }}</h1>
+</div>
+
+<div class="post-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+    {{ range .Pages.ByDate.Reverse }}
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        
+        <a href="{{ .RelPermalink }}" style="font-size: 1.1rem; color: var(--text-color); text-decoration: none;">
+            {{ .Title }}
+        </a>
+        
+        <div style="font-size: 0.9rem; color: #6c757d; text-align: right; padding-left: 1rem; flex-shrink: 0;">
+            {{ .Date.Format "January 2, 2006" }}
+        </div>
+        
+    </div>
+    {{ end }}
+</div>
+{{ end }}

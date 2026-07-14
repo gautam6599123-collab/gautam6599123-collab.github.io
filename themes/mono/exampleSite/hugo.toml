@@ -1,0 +1,47 @@
+baseURL = 'https://example.org/'
+title = 'Mono Theme Preview'
+theme = 'mono'
+
+# This tells the example site to look two folders up for its themes
+themesDir = '../..'
+
+[params]
+  math = true
+  description = "A rigid, high-performance, datasheet-inspired theme."
+  author = "Jane Doe"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "bw" 
+  
+  [markup.goldmark.renderer]
+    unsafe = true
+  
+  [markup.goldmark.extensions]
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)'], ['$', '$']]
+
+[menus]
+  [[menus.main]]
+  name = 'Home'
+  pageRef = '/'
+  weight = 10
+
+  [[menus.main]]
+  name = 'Posts'
+  pageRef = '/posts'
+  weight = 20
+
+  [[menus.main]]
+  name = 'Tags'
+  pageRef = '/tags'
+  weight = 30
+
+  [[menus.main]]
+  name = 'Projects'
+  pageRef = '/projects'
+  weight = 40

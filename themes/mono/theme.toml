@@ -1,0 +1,12 @@
+name = "Mono"
+license = "MIT"
+licenselink = "https://github.com/gautam6599123-collab/hugo-theme-mono/blob/main/LICENSE"
+description = "A rigid, high-performance, datasheet-inspired theme for technical writing."
+homepage = "https://github.com/YOUR_GITHUB_USERNAME/hugo-theme-mono"
+tags = ["blog", "minimal", "dark mode", "technical", "fast"]
+features = ["mathjax/katex support", "syntax highlighting", "zero-javascript page transitions", "SEO optimized"]
+min_version = "0.114.0"
+
+[author]
+  name = "Gautam Singh"
+  homepage = "https://github.com/gautam6599123-collab"

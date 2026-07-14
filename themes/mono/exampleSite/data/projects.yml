@@ -1,0 +1,11 @@
+- title: "High-Performance Distributed System"
+  date: "May 2026"
+  description: "A custom-built minimal storage server utilizing advanced filesystems on baremetal, optimized for high throughput."
+  image: "https://via.placeholder.com/400x250.png?text=System+Project"
+  url: "#"
+
+- title: "Automated Build Pipeline"
+  date: "January 2026"
+  description: "Scripted a build automation tool to manage complex configuration assets and environment variants."
+  image: "https://via.placeholder.com/400x250.png?text=Automation+Project"
+  url: "#"

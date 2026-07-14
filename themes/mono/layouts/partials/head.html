@@ -1,0 +1,9 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}
+<!-- Load Math formatting only if 'math: true' is present in frontmatter -->
+{{ if or .Params.math site.Params.math }}
+    {{ partial "math.html" . }}
+{{ end }}

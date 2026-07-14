@@ -1,0 +1,17 @@
+<!-- This intercepts standard markdown images and renders them as figures -->
+<figure style="margin: 2.5rem 0; text-align: center;">
+    
+    <!-- Adaptive image styling: scales down if larger than container, keeps aspect ratio -->
+    <img src="{{ .Destination | safeURL }}" 
+         alt="{{ .Text }}" 
+         {{ with .Title }}title="{{ . }}"{{ end }} 
+         style="max-width: 100%; height: auto; display: inline-block; border: 1px solid var(--border-color);">
+    
+    <!-- Automatically pulls the markdown alt text to use as the caption -->
+    {{ with .Text }}
+    <figcaption style="margin-top: 0.75rem; font-size: 0.85rem; color: #6c757d;">
+        {{ . }}
+    </figcaption>
+    {{ end }}
+    
+</figure>

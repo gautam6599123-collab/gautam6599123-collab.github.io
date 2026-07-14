@@ -1,0 +1,355 @@
+{{ define "main" }}
+
+<!-- Main Header -->
+
+<h2 style="margin-bottom: 1rem; font-size: 1.5rem;">About</h2>
+
+<div class="about-container" style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem;">
+    
+    {{ if hugo.Data.about.personal }}
+    <div style="flex: 2; min-width: 300px;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-color); font-size: 0.9rem;">
+            <thead>
+                <tr style="background-color: #e5e5e5; border-bottom: 1px solid var(--border-color);">
+                    <th colspan="2" style="text-align: left; padding: 0.5rem; font-weight: bold;">Personal Information</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range hugo.Data.about.personal }}
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 0.5rem; border-right: 1px solid var(--border-color); width: 35%;">{{ .label }}</td>
+                    <td style="padding: 0.5rem;">{{ .value | markdownify }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </div>
+    {{ end }}
+
+    {{ if hugo.Data.about.contact }}
+    <div style="flex: 1; min-width: 250px;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-color); font-size: 0.9rem;">
+            <thead>
+                <tr style="background-color: #e5e5e5; border-bottom: 1px solid var(--border-color);">
+                    <th colspan="2" style="text-align: left; padding: 0.5rem; font-weight: bold;">Contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range hugo.Data.about.contact }}
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 0.5rem; border-right: 1px solid var(--border-color); width: 35%;">{{ .label }}</td>
+                    <td style="padding: 0.5rem; color: #551a8b;">{{ .value | markdownify }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </div>
+    {{ end }}
+
+</div>
+
+<!-- Bio Paragraph pulled dynamically from _index.md -->
+<div class="bio-content" style="line-height: 1.5; margin-bottom: 2rem;">
+  {{ .Content }}
+</div>
+
+<!-- Recent Posts Section -->
+<div class="recent-posts-section" style="margin-top: 4rem; margin-bottom: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Recent Posts</h2>
+    
+    <!-- Inline style for hover effect on the post cards -->
+    <style>
+        .post-card {
+            display: block;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+            background-color: var(--page-bg);
+            margin-bottom: 1.5rem;
+        }
+        .post-card:hover {
+            background-color: #f4f4f4; /* Slight grey tint on hover */
+        }
+    </style>
+
+    <div style="display: flex; flex-direction: column;">
+        <!-- Fetch all regular pages in the "posts" section, limited to the first 5 -->
+        {{ $posts := where site.RegularPages "Section" "posts" }}
+        {{ range first 5 $posts }}
+        
+        <!-- The entire card acts as a clickable link (HTML5 standard) -->
+        <a href="{{ .RelPermalink }}" class="post-card">
+            
+            <!-- Post Title -->
+            <h3 style="margin-top: 0; margin-bottom: 0.75rem; font-size: 1.4rem;">
+                {{ .Title }}
+            </h3>
+            
+            <!-- Post Excerpt / Summary -->
+            <!-- truncate limits the text so it doesn't get too long, matching the reference image -->
+            <p style="margin: 0 0 1.2rem 0; color: #444; line-height: 1.6; font-size: 0.95rem;">
+                {{ .Summary | truncate 220 }}
+            </p>
+            
+            <!-- Meta Information Bar -->
+            <div style="font-size: 0.85rem; color: #6c757d;">
+                Date: {{ .Date.Format "January 2, 2006" }} 
+                <span style="margin: 0 0.5rem;">|</span> 
+                
+                <!-- Hugo automatically calculates reading time -->
+                Estimated Reading Time: {{ .ReadingTime }} min 
+                <span style="margin: 0 0.5rem;">|</span> 
+                
+                <!-- Uses the author param from the post, falls back to Gautam Singh -->
+                Author: {{ .Params.author | default "Gautam Singh" }}
+            </div>
+            
+        </a>
+        
+        {{ end }}
+    </div>
+</div>
+
+<!-- Teaching Section (Dormant unless data/teaching.yml has entries) -->
+{{ if hugo.Data.teaching }}
+<div class="teaching-section" style="margin-top: 3rem; margin-bottom: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Teaching</h2>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Loop through each entry in teaching.yml -->
+        {{ range hugo.Data.teaching }}
+        <div style="display: flex; align-items: baseline;">
+            
+            <!-- Term / Year (Muted grey, fixed width to align the right side) -->
+            <div style="width: 120px; flex-shrink: 0; color: #6c757d; font-size: 1rem;">
+                {{ .term }}
+            </div>
+            
+            <!-- Course Information -->
+            <div style="font-size: 1rem; color: var(--text-color);">
+                <span style="font-weight: bold;">{{ .code }}</span>
+                <span style="margin: 0 0.25rem;">&middot;</span>
+                <span style="font-style: italic;">{{ .title }}</span>
+            </div>
+            
+        </div>
+        {{ end }}
+    </div>
+    
+    <!-- Faint bottom border as seen in the reference image -->
+    <hr style="border: none; border-bottom: 1px solid #eaeaea; margin-top: 1.5rem;">
+</div>
+{{ end }}
+
+<!-- Publications Section (Dormant unless data/publications.yml has entries) -->
+{{ if hugo.Data.publications }}
+<div class="publications-section" style="margin-top: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Publications</h2>
+    
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <!-- Loop through each entry in publications.yml -->
+        {{ range hugo.Data.publications }}
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+            
+            <!-- Thumbnail Image -->
+            <div style="flex-shrink: 0; width: 220px; height: 120px; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden;">
+                {{ if .image }}
+                <img src="{{ .image }}" alt="{{ .title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                {{ else }}
+                <div style="width: 100%; height: 100%; background-color: #e5e5e5; display: flex; align-items: center; justify-content: center; color: #a3a3a3; font-size: 0.8rem;">No Image</div>
+                {{ end }}
+            </div>
+            
+            <!-- Text Content -->
+            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <!-- Title -->
+                <div style="font-weight: bold; font-size: 1.1rem; color: var(--text-color);">
+                    {{ .title }}
+                </div>
+                
+                <!-- Authors (markdownify allows bolding specific names via YAML) -->
+                <div style="color: #444;">
+                    {{ .authors | markdownify }}
+                </div>
+                
+                <!-- Venue / Year -->
+                <div style="color: #666; font-size: 0.9rem;">
+                    {{ .venue }}
+                </div>
+                
+                <!-- Links -->
+                <div style="margin-top: 0.25rem; font-size: 0.9rem; font-weight: bold;">
+                    {{ range $index, $link := .links }}
+                        {{ if gt $index 0 }} <span style="font-weight: normal; margin: 0 0.3rem;">&middot;</span> {{ end }}
+                        <a href="{{ .url }}" style="color: var(--text-color); text-decoration: none;">{{ .name }}</a>
+                    {{ end }}
+                </div>
+            </div>
+            
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+
+<!-- Latest News Section (Dormant unless data/news.yml has entries) -->
+{{ if hugo.Data.news }}
+<div class="news-section" style="margin-top: 3rem; margin-bottom: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Latest News</h2>
+    
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+        {{ range hugo.Data.news }}
+        <div style="display: flex; align-items: baseline;">
+            
+            <!-- Date Column -->
+            <div style="width: 120px; flex-shrink: 0; font-weight: bold; color: var(--text-color);">
+                {{ .date }}
+            </div>
+            
+            <!-- News Content Column (markdownify allows bolding, italics, and links) -->
+            <div style="font-size: 1rem; color: var(--text-color); line-height: 1.4;">
+                {{ .content | markdownify }}
+            </div>
+            
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+
+<!-- Service Section (Dormant unless data/service.yml has entries) -->
+{{ if hugo.Data.service }}
+<div class="service-section" style="margin-top: 3rem; margin-bottom: 3rem;">
+    
+    {{ range hugo.Data.service }}
+    <!-- Category Header (e.g., "Conference:") -->
+    <h3 style="font-size: 1.1rem; font-weight: normal; margin-bottom: 1rem; margin-top: 2rem; color: var(--text-color);">
+        {{ .category }}:
+    </h3>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        {{ range .items }}
+        <!-- Flex container with space-between pushes dates to the right edge -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            
+            <!-- Left Side: Role and Venue -->
+            <div style="font-size: 1rem; color: var(--text-color);">
+                <span style="color: #6c757d;">{{ .role }} | </span>
+                <a href="{{ .url }}" style="color: #0000ee; text-decoration: none;">{{ .venue }}</a>
+            </div>
+            
+            <!-- Right Side: Dates -->
+            <div style="color: #6c757d; font-size: 0.95rem; text-align: right; padding-left: 1rem;">
+                {{ .dates }}
+            </div>
+            
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+    
+</div>
+{{ end }}
+
+<!-- TAship Section (Dormant unless data/taship.yml has entries) -->
+{{ if hugo.Data.taship }}
+<div class="taship-section" style="margin-top: 3rem; margin-bottom: 3rem;">
+    
+    <h3 style="font-size: 1.1rem; font-weight: normal; margin-bottom: 1rem; color: var(--text-color);">
+        Teaching Assistantship:
+    </h3>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        {{ range hugo.Data.taship }}
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            
+            <!-- Main Text Row -->
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                
+                <!-- Left Side: Role, Course, and optional links -->
+                <div style="font-size: 1rem; color: var(--text-color);">
+                    <span style="color: #6c757d;">{{ .role }} | </span>
+                    <span style="color: #0000ee;">{{ .course }}</span>
+                    
+                    <!-- Optional Small Links (Website, Video, etc.) -->
+                    {{ if .links }}
+                        <span style="margin-left: 0.5rem;">
+                        {{ range .links }}
+                            <a href="{{ .url }}" style="font-size: 0.8rem; color: #6c757d; border: 1px solid #border-color; text-decoration: none; padding: 0 0.3rem; margin-right: 0.2rem; background-color: #f4f4f4;">
+                                {{ .name }}
+                            </a>
+                        {{ end }}
+                        </span>
+                    {{ end }}
+                </div>
+                
+                <!-- Right Side: Dates -->
+                <div style="color: #6c757d; font-size: 0.95rem; text-align: right; padding-left: 1rem; flex-shrink: 0;">
+                    {{ .dates }}
+                </div>
+                
+            </div>
+            
+            <!-- Optional Embedded Image -->
+            {{ if .image }}
+            <div style="margin-top: 0.5rem; margin-bottom: 1rem;">
+                <img src="{{ .image }}" alt="{{ .caption }}" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); display: block;">
+                {{ if .caption }}
+                <div style="font-size: 0.85rem; color: #6c757d; margin-top: 0.25rem;">
+                    {{ .caption }}
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+        </div>
+        {{ end }}
+    </div>
+    
+</div>
+{{ end }}
+
+<!-- Honours and Awards Section (Dormant unless data/awards.yml has entries) -->
+{{ if hugo.Data.awards }}
+<div class="awards-section" style="margin-top: 3rem; margin-bottom: 3rem;">
+    
+    <h3 style="font-size: 1.1rem; font-weight: normal; margin-bottom: 1rem; color: var(--text-color);">
+        Honours & Awards:
+    </h3>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        {{ range hugo.Data.awards }}
+        <!-- Flex container pushes dates to the right edge -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            
+            <!-- Left Side: Title and Organization -->
+            <div style="font-size: 1rem; color: var(--text-color);">
+                
+                <!-- If a URL is provided, make the title a link -->
+                {{ if .url }}
+                    <a href="{{ .url }}" style="color: #0000ee; text-decoration: none;">{{ .title }}</a>
+                {{ else }}
+                    <span>{{ .title }}</span>
+                {{ end }}
+                
+                <!-- Organization (Optional) -->
+                {{ if .organization }}
+                    <span style="color: #6c757d;"> | {{ .organization }}</span>
+                {{ end }}
+                
+            </div>
+            
+            <!-- Right Side: Date -->
+            <div style="color: #6c757d; font-size: 0.95rem; text-align: right; padding-left: 1rem; flex-shrink: 0;">
+                {{ .date }}
+            </div>
+            
+        </div>
+        {{ end }}
+    </div>
+    
+</div>
+{{ end }}
+
+{{ end }}

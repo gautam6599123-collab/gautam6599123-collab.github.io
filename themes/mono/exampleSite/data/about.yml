@@ -1,0 +1,19 @@
+personal:
+  - label: "Name"
+    value: "Jane Doe" # Replaced with generic placeholder
+  - label: "Current Employment"
+    value: "Software Engineer, Tech Corp"
+  - label: "Previous Employments"
+    # You can use standard Markdown for links here!
+    value: "Research Intern, [Generic University](https://example.org)"
+  - label: "Education"
+    value: "BS Computer Science<br>[State University](https://example.org)"
+
+# Contact Table
+contact:
+  - label: "Email"
+    value: "[jane.doe@example.org](mailto:jane.doe@example.org)"
+  - label: "LinkedIn"
+    value: "[Jane Doe](https://linkedin.com)"
+  - label: "GitHub"
+    value: "[janedoe-dev](https://github.com)"

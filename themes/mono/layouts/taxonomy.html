@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="page-header" style="margin-bottom: 3rem;">
+    <h1 style="margin: 0 0 1.5rem 0; font-size: 2rem;">{{ .Title }}</h1>
+</div>
+
+<div class="tags-collection">
+    <!-- Loop through all the tags, ordered alphabetically -->
+    {{ range .Data.Terms.Alphabetical }}
+    <div class="tag-group" style="margin-bottom: 3rem;">
+        
+        <!-- Tag Heading -->
+        <!-- Links to the specific tag's page, styled with your purple accent -->
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                {{ .Page.Title }}
+        </h2>
+        
+        <!-- List of posts for this tag, sorted by newest first -->
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            {{ range .Pages.ByDate.Reverse }}
+            <!-- Flex container pushes the date to the right edge -->
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                
+                <!-- Post Title Link -->
+                <a href="{{ .RelPermalink }}" style="font-size: 1.1rem; color: var(--text-color); text-decoration: none;">
+                    {{ .Title }}
+                </a>
+                
+                <!-- Post Date -->
+                <div style="font-size: 0.9rem; color: #6c757d; text-align: right; padding-left: 1rem; flex-shrink: 0;">
+                    {{ .Date.Format "January 2, 2006" }}
+                </div>
+                
+            </div>
+            {{ end }}
+        </div>
+        
+    </div>
+    {{ end }}
+</div>
+{{ end }}

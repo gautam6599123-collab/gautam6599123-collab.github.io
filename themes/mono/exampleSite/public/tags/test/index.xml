@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Test on Mono Theme Preview</title>
+		<link>http://localhost:1313/tags/test/</link>
+		<description>Recent content in Test on Mono Theme Preview</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/test/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Hello World: Testing the Theme</title>
+				<link>http://localhost:1313/posts/hello-world/</link>
+				<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/hello-world/</guid>
+				<description>&lt;p&gt;This is a dummy post to verify that the typography, $O(n^2)$ inline math, and layout elements are rendering correctly.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

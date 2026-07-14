@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="post-content">
+    
+    <!-- Post Header -->
+    <header style="margin-bottom: 2.5rem;">
+        <h1 style="margin: 0 0 0.5rem 0; font-size: 2rem;">{{ .Title }}</h1>
+        <time datetime="{{ .Date.Format "2006-01-02" }}" style="font-size: 0.95rem; color: #6c757d;">
+            {{ .Date.Format "January 2, 2006" }}
+        </time>
+    </header>
+
+    <!-- Post Body -->
+    <div class="content" style="line-height: 1.6; font-size: 1rem;">
+        {{ .Content }}
+    </div>
+
+    <!-- Tags Section -->
+    {{ if .Params.tags }}
+    <footer style="margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+        <div style="font-size: 0.95rem;">
+            <span style="font-weight: bold; margin-right: 0.5rem;">Tags:</span>
+            {{ range $index, $tag := .Params.tags }}
+                {{ if gt $index 0 }}<span style="color: #ccc; margin: 0 0.3rem;">|</span>{{ end }}
+                <a href="/tags/{{ $tag | urlize }}" style="color: #551a8b; text-decoration: none;">{{ $tag }}</a>
+            {{ end }}
+        </div>
+    </footer>
+    {{ end }}
+    
+</article>
+{{ end }}

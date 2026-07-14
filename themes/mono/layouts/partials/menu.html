@@ -1,0 +1,28 @@
+<nav class="main-nav" style="display: flex; gap: 0; margin-bottom: 0.5rem;">
+    <style>
+        .nav-tab {
+            border: 1px solid var(--border-color, #000);
+            padding: 0.5rem 2rem;
+            text-decoration: none;
+            color: var(--text-color, #000);
+            font-weight: bold;
+            margin-right: -1px; /* Overlaps borders */
+        }
+        .nav-tab:hover, .nav-tab.active {
+            background-color: var(--text-color, #000);
+            color: var(--page-bg, #fff);
+        }
+    </style>
+
+    {{ $currentPage := . }}
+    
+    {{ range site.Menus.main }}
+        
+        {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+        
+        <a href="{{ .URL }}" class="nav-tab {{ if $isActive }}active{{ end }}">
+            {{ .Name }}
+        </a>
+        
+    {{ end }}
+</nav>
