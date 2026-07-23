@@ -1,8 +1,8 @@
-# - title: "High-Performance Distributed System"
-#   date: "May 2026"
-#   description: "A custom-built minimal storage server utilizing advanced filesystems on baremetal, optimized for high throughput."
-#   image: "https://via.placeholder.com/400x250.png?text=System+Project"
-#   url: "#"
+- title: "Mono"
+  date: "July 2026"
+  description: "Mono is a rigid, high-performance, datasheet-inspired theme built for technical writing, mathematics, and portfolio showcases."
+  image: "pictures/Screenshot 2026-07-23 at 16-54-02 Mono Theme Preview.png"
+  url: "https://github.com/gautam6599123-collab/hugo-theme-mono"
 
 # - title: "Automated Build Pipeline"
 #   date: "January 2026"
