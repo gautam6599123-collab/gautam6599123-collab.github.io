@@ -2,6 +2,7 @@
 title = 'July 2026 Photo Dump'
 date = 2026-07-27
 draft = false
+summary = "Photos from my phone camera fron July 2026"
 tags = ["Photo Dump"]
 +++
 
