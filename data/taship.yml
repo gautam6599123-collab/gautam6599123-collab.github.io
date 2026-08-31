@@ -1,6 +1,6 @@
-# - role: "Teaching Assistant"
-#   course: "Introduction to Computational Science"
-#   dates: "@2025Spring, 2024Fall"
+- role: "Teaching Assistant"
+  course: "Data Structures and Algorithms"
+  dates: "@2026Autumn"
 #
 # - role: "Teaching Assistant"
 #   course: "Summer Undergraduate Research Program"

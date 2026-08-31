@@ -10,7 +10,6 @@ Hi, I'm Gautam Singh! I am a final-year BS-MS student majoring in Mathematics wi
 
 I am particularly interested in theoretical computer science and statistical learning theory. My current research interests include:
 
-* Mathematical and Computational Finance
 * Geometry Processing
 * Computer Vision & Image Processing
 * Machine Learning & Deep Learning
