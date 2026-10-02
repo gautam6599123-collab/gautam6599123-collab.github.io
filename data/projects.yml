@@ -4,8 +4,8 @@
   image: "pictures/Screenshot 2026-07-23 at 16-54-02 Mono Theme Preview.png"
   url: "https://github.com/gautam6599123-collab/hugo-theme-mono"
 
-# - title: "Automated Build Pipeline"
-#   date: "January 2026"
-#   description: "Scripted a build automation tool to manage complex configuration assets and environment variants."
-#   image: "https://via.placeholder.com/400x250.png?text=Automation+Project"
-#   url: "#"
+- title: "A Sea-Thru Implementation"
+  date: "September 2026"
+  description: "An implementation of the method described in `Sea-Thru` A Method for Removing Water from Underwater Images, Akkaynak & Treibitz, CVPR, 2019"
+  image: "pictures/Example.png"
+  url: "https://github.com/gautam6599123-collab/seathru_implementation"
