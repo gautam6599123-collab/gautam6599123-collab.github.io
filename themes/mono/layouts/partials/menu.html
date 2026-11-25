@@ -1,6 +1,8 @@
 <nav class="main-nav" style="display: flex; gap: 0; margin-bottom: 0.5rem;">
     <style>
         .nav-tab {
+            flex: 1;
+            text-align: center;
             border: 1px solid var(--border-color, #000);
             padding: 0.5rem 2rem;
             text-decoration: none;
@@ -15,14 +17,14 @@
     </style>
 
     {{ $currentPage := . }}
-    
+
     {{ range site.Menus.main }}
-        
+
         {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
-        
+
         <a href="{{ .URL }}" class="nav-tab {{ if $isActive }}active{{ end }}">
             {{ .Name }}
         </a>
-        
+
     {{ end }}
 </nav>

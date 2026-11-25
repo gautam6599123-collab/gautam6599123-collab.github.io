@@ -1,6 +1,6 @@
 +++
 title = 'August 2026 Photo Dump'
-date = 2026-07-27
+date = 2026-08-27
 draft = false
 summary = "Photos from my phone camera from August 2026"
 tags = ["Photo Dump"]
@@ -63,4 +63,3 @@ tags = ["Photo Dump"]
     I finally got my <a href="https://sgi.mit.edu/">SGI 2026</a> cup.
   </figcaption>
 </figure>
-
