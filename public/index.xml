@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 27 Sep 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Thu, 26 Nov 2026 00:00:00 +0530</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>October 2026 &amp; November Photo Dump</title>
+				<link>http://localhost:1313/posts/oct_nov_2026_photo_dump/photo_dump/</link>
+				<pubDate>Thu, 26 Nov 2026 00:00:00 +0530</pubDate>
+				<guid>http://localhost:1313/posts/oct_nov_2026_photo_dump/photo_dump/</guid>
+				<description>Photos from my phone camera from October and November 2026</description>
+			</item>
 			<item>
 				<title>September 2026 Photo Dump</title>
 				<link>http://localhost:1313/posts/sep_2026_photo_dump/photo_dump/</link>
