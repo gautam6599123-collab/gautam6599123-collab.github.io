@@ -1,5 +1,5 @@
 +++
-title = 'October 2026 & November Photo Dump'
+title = 'October & November 2026 Photo Dump'
 date = 2026-11-26T00:00:00+05:30
 draft = false
 summary = "Photos from my phone camera from October and November 2026"
